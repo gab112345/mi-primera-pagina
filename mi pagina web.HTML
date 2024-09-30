@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INEB-D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+        }
+        .publicaciones-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .publicacion {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .publicacion img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>INEB-D</h1>
+</header>
+
+<nav>
+    <a href="#galeria">Galería</a>
+    <a href="#comentarios">Comentarios</a>
+    <a href="#publicaciones">Publicaciones</a>
+    <a href="#redes">Redes Sociales</a>
+</nav>
+
+<section id="galeria">
+    <h2>Galería</h2>
+    <div class="galeria-container">
+        <img src="C:\Users\FAMILIA RAJPOP\Downloads\457738192_2548115288709191_6684834328067946214_n.jpg"/>
+ <img src="C:\Users\FAMILIA RAJPOP\Downloads\458291725_954589729805848_2612151385257447118_n.jpg"/>
+ <img src="C:\Users\FAMILIA RAJPOP\Downloads\458390670_1253217615841058_4517849648471241556_n.jpg"/>
+<img src= "C:\Users\FAMILIA RAJPOP\Downloads\458476421_426689516602064_6879024853766485955_n.jpg"/>
+<img src="C:\Users\FAMILIA RAJPOP\Downloads\458486563_1026725022263906_3514609969946663493_n.jpg"/>
+<img src="C:\Users\FAMILIA RAJPOP\Downloads\458306945_1918016048684387_8176872573851478557_n.jpg"/>
+  <img src="C:\Users\FAMILIA RAJPOP\Downloads\458185286_1707332733453387_3325566242162118375_n.jpg"/>
+ <img src="C:\Users\FAMILIA RAJPOP\Downloads\458485093_1252775849502889_2027134574167444034_n.jpg"/>
+ <img src="C:\Users\FAMILIA RAJPOP\Downloads\458489343_496968406476249_1397500776116153922_n.jpg"/>
+ <img src="C:\Users\FAMILIA RAJPOP\Downloads\458491571_1947635605685018_4746555833594697335_n.jpg"/>
+ 
+
+
+   </section>
+
+<section id="comentarios">
+    <h2>Comentarios</h2>
+    <div class="comentarios-container">
+        <!-- Aquí se mostrarán los comentarios -->
+    </div>
+    <form id="form-comentario" action="#" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" rows="4" required></textarea>
+       
+<section id="publicaciones">
+    <h2>Publicaciones</h2>
+    <div class="publicaciones-container">
+        <!-- Aquí se mostrarán las publicaciones -->
+        <div class="publicacion">
+            <img src="https://via.placeholder.com/600x400" alt="Imagen de la publicación">
+            <h3>Título de la publicación</h3>
+            <p>Contenido de la publicación, describe a que esta realacionado tu post. </p>
+        </div>
+    </div>
+    <form id="form-publicacion" action="#" method="post" enctype="multipart/form-data">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" name="contenido" rows="4" required></textarea>
+        <label for="imagen-publicacion">Imagen:</label>
+        <input type="file" id="imagen-publicacion" name="imagen-publicacion" accept="image/*">
+        <button type="submit">Publicar</button>
+    </form>
+</section>
+
+<section id="redes">
+    <h2>Redes Sociales</h2>
+    <p>Conéctate con nosotros a través de nuestras redes sociales:</p>
+    <ul>
+        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+        <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+    </ul>
+</section>
+
+<footer>
+    <p>© 2024 INEB-D. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    const galeriaContainer = document.querySelector(".galeria-container");
+    const formSubida = document.getElementById("form-subida");
+    const imagenSubida = document.getElementById("imagen-subida");
+    const comentariosContainer = document.querySelector(".comentarios-container");
+    const formComentario = document.getElementById("form-comentario");
+    const imagenComentario = document.getElementById("imagen-comentario");
+    const publicacionesContainer = document.querySelector(".publicaciones-container");
+    const formPublicacion = document.getElementById("form-publicacion");
+    const imagenPublicacion = document.getElementById("imagen-publicacion");
+
+    // Función para crear un elemento de imagen
+    function crearImagen(src, alt) {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = alt;
+        img.classList.add("galeria-container");
+        return img;
+    }
+
+    // Manejar la subida de imágenes en la galería
+    formSubida.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const file = imagenSubida.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = crearImagen(e.target.result, file.name);
+                galeriaContainer.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Manejar la subida de imágenes en los comentarios
+    formComentario.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const file = imagenComentario.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = crearImagen(e.target.result, file.name);
+                comentariosContainer.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Manejar la subida de publicaciones
+    formPublicacion.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const titulo = document.getElementById("titulo").value;
+        const contenido = document.getElementById("contenido").value;
+        const file = imagenPublicacion.files[0];
+
+        let imagenSrc = "https://via.placeholder.com/600x400"; // Imagen de marcador de posición por defecto
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                imagenSrc = e.target.result;
+                crearPublicacion(titulo, contenido, imagenSrc);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            crearPublicacion(titulo, contenido, imagenSrc);
+        }
+    });
+
+    // Función para crear un elemento de publicación
+    function crearPublicacion(titulo, contenido, imagenSrc) {
+        const publicacion = document.createElement("div");
+        publicacion.classList.add("publicacion");
+
+        const img = document.createElement("img");
+        img.src = imagenSrc;
+        img.alt = "Imagen de la publicación";
+        publicacion.appendChild(img);
+
+        const h3 = document.createElement("h3");
+        h3.textContent = titulo;
+        publicacion.appendChild(h3);
+
+        const p = document.createElement("p");
+        p.textContent = contenido;
+        publicacion.appendChild(p);
+
+        publicacionesContainer.appendChild(publicacion);
+    }
+</script>
+
+</body>
+</html>
